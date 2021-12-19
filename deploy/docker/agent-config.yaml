@@ -1,0 +1,21 @@
+traces:
+  configs:
+  - name: default
+    remote_write:
+      - endpoint: ${ENDPOINT}
+        basic_auth:
+          username: ${USERNAME}
+          password: ${PASSWORD}
+    receivers:
+      jaeger:
+        protocols:
+          grpc:
+          thrift_binary:
+          thrift_compact:
+          thrift_http:
+      zipkin:
+      otlp:
+        protocols:
+          http:
+          grpc:
+      opencensus:

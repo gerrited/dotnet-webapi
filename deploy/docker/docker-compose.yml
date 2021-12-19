@@ -9,3 +9,9 @@ services:
       driver: loki
       options:
         loki-url: ${LOKI_URL}
+
+  grafana-agent:
+    image: grafana/agent:latest
+    command: "-config.file=/etc/agent-config.yaml"
+    volumes:
+      - ./agent-config.yaml:/etc/agent-config.yaml

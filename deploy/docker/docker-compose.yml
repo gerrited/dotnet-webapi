@@ -1,15 +1,15 @@
 version: "3"
 services:
-
-  app:
+  dotnet-webapi:
     image: fordperfect/dotnet-webapi
     ports:
       - "5000:80"
+    environment:
+      - OltpEndpoint=${OltpEndpoint}
     logging:
       driver: loki
       options:
         loki-url: ${LOKI_URL}
-
   grafana-agent:
     image: grafana/agent:latest
     command: "-config.file=/etc/agent-config.yaml"

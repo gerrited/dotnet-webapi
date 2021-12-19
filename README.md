@@ -3,3 +3,4 @@ A simple .NET Web API to try out GitHub Actions with docker buildx, Grafana Agen
 
 # Steps after cloning the repository
 * Define secrets DOCKERHUB_USERNAME and DOCKERHUB_TOKEN which are used from the GitHub action to push the multi-plattform images to the container registry (in this case Docker Hub).
+* To enable the logging to Grafana Loki create a new .env file in /deploy/docker and add the variable LOKI_URL.
